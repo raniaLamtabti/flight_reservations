@@ -5,48 +5,35 @@
         public function __construct() {
             $this->db = new Database;
         }
-
-        public function fetchUser($data) {
-            $this->db->query("SELECT * FROM user WHERE username = :username AND loginPassword = :password");
-
-            $this->db->bind(':username', $data['username']);
-            $this->db->bind(':password', $data['password']);
-
-            $user = $this->db->single();
-
-            return $user;
-        }
-
+        
         public function store($data) {
-            $this->db->query('INSERT INTO user (firstName, lastName, dateBirth, username, loginPassword, role) VALUES(:firstName, :lastName, :dateBirth, :username, :loginPassword, :role)');
-    
-            //Bind values
-            $this->db->bind(':firstName', $data['firstName']);
-            $this->db->bind(':lastName', $data['lastName']);
-            $this->db->bind(':dateBirth', $data['dateBirth']);
-            $this->db->bind(':username', $data['username']);
-            $this->db->bind(':loginPassword', $data['loginPassword']);
-            $this->db->bind(':role', 'client');
-    
-            //Execute function
-            if ($this->db->execute()) {
-                return true;
-            } else {
-                return false;
+            sizeof($data);
+            foreach($data as $user){
+                $this->db->query('INSERT INTO passenger (firstName, lastName, email, dateBirth, idUser) VALUES(:firstName, :lastName, :email, :dateBirth, :idUser)');
+                //Bind values
+                $this->db->bind(':firstName', $user['firstName']);
+                $this->db->bind(':lastName', $user['lastName']);
+                $this->db->bind(':email', $user['email']);
+                $this->db->bind(':dateBirth', $user['dateBirth']);
+                $this->db->bind(':idUser', '1');
+                //Execute function
+                try {
+                    $this->db->execute();
+                } catch(PDOException $e) {
+                    return $e->getMessage();
+                }
             }
         }
 
         public function update($data) {
-            $this->db->query('UPDATE user SET firstName = :firstName, lastName = :lastName, dateBirth = :dateBirth, username = :username, loginPassword = :loginPassword WHERE id = :id');
+            $this->db->query('UPDATE passenger SET firstName = :firstName, lastName = :lastName, email = :email, dateBirth = :dateBirth WHERE id = :id');
     
             //Bind values
-            $this->db->bind(':id', $data['id']);
-            $this->db->bind(':firstName', $data['firstName']);
-            $this->db->bind(':lastName', $data['lastName']);
-            $this->db->bind(':dateBirth', $data['dateBirth']);
-            $this->db->bind(':username', $data['username']);
-            $this->db->bind(':loginPassword', $data['loginPassword']);
-            // $this->db->bind(':role', $data['role']);
+            $this->db->bind(':id', $data[0]['id']);
+            $this->db->bind(':firstName', $data[0]['firstName']);
+            $this->db->bind(':lastName', $data[0]['lastName']);
+            $this->db->bind(':email', $data[0]['email']);
+            $this->db->bind(':dateBirth', $data[0]['dateBirth']);
     
             //Execute function
             if ($this->db->execute()) {
@@ -57,28 +44,28 @@
         }
         
         public function read() {
-            $this->db->query('SELECT * FROM user');
+            $this->db->query('SELECT * FROM passenger');
     
             //Execute function
-            $users = $this->db->resultSet();
-            return $users;
+            $passengers = $this->db->resultSet();
+            return $passengers;
         }
         
         public function show($data) {
-            $this->db->query('SELECT * FROM user WHERE id = :id');
+            $this->db->query('SELECT * FROM passenger WHERE id = :id');
     
             //Bind values
-            $this->db->bind(':id', $data['id']);
+            $this->db->bind(':id', $data[0]['id']);
     
             //Execute function
-            $user = $this->db->single();
-            return $user;
+            $passenger = $this->db->single();
+            return $passenger;
         }
         public function delete($data) {
-            $this->db->query('DELETE FROM user WHERE id = :id');
+            $this->db->query('DELETE FROM passenger WHERE id = :id');
     
             //Bind values
-            $this->db->bind(':id', $data['id']);
+            $this->db->bind(':id', $data[0]['id']);
     
             //Execute function
             if ($this->db->execute()) {
