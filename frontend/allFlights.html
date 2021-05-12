@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../public/sass/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <a class="navbar-brand" href="#">Navbar</a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">AllFlights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">MyFlights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reservations</a>
+                    </li>
+                </ul>
+                <!-- <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> -->
+            </div>
+        </div>
+    </nav>
+    <div class="search-div bg-dark p-3">
+        <div class="row g-3">
+            <div class="col-auto">
+                <label for="fromCountry" class="form-label text-secondary">From</label>
+                <input type="text" class="form-control" id="fromCountry" placeholder="Morroco, Marakesh">
+            </div>
+            <div class="col-auto">
+                <label for="toCountry" class="form-label text-secondary">To</label>
+                <input type="text" class="form-control" id="toCountry" placeholder="Morroco, Marakesh">
+            </div>
+            <div class="col-auto">
+                <label for="dateDepart" class="form-label text-secondary">Date depart</label>
+                <input type="date" class="form-control" id="dateDepart">
+            </div>
+            <div class="col-auto">
+                <label for="dateArrive" class="form-label text-secondary">Date of back</label>
+                <input type="date" class="form-control" id="dateArrive">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3 btn-group-lg text-white" onclick="findFlight()">Search</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Depart</th>
+                    <th scope="col">Land</th>
+                    <th scope="col">Origin</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Options</th>
+                </tr>
+            </thead>
+            <tbody class="line">
+            </tbody>
+        </table>
+    </div>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../public/js/flights.js"></script>
+    <script src="../public/js/search.js"></script>
+</body>
+
+</html>

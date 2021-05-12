@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Site</title>
+    <link rel="stylesheet" href="../public/sass/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar fixed-top navbar-light">
+            <div class="container">
+                <a class="navbar-brand text-primary fw-bolder fs-3" href="#"><img src="../public/img/logo.svg" alt=""> Sky</a>
+                <div class="">
+                    <a class="btn btn-primary m-3 text-white">Register</a>
+                    <a href="login.html" class="btn btn-outline-dark">Login</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="search-div bg-dark">
+            <form class="row g-3">
+                <div class="col-auto">
+                    <label for="fromCityCountry" class="form-label text-secondary">From</label>
+                    <input type="text" class="form-control" id="fromCityCountry" placeholder="Morroco, Marakesh">
+                </div>
+                <div class="col-auto">
+                    <label for="toCityCountry" class="form-label text-secondary">To</label>
+                    <input type="text" class="form-control" id="toCityCountry" placeholder="Password">
+                </div>
+                <div class="col-auto">
+                    <label for="dateDepart" class="form-label text-secondary">Date depart</label>
+                    <input type="date" class="form-control" id="dateDepart">
+                </div>
+                <div class="col-auto">
+                    <label for="dateArrive" class="form-label text-secondary">Date of back</label>
+                    <input type="date" class="form-control" id="dateArrive">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-3 btn-group-lg text-white">Search</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- <section class="confidence-section">
+        <div class="confidence bg-light">
+            <div class="confidence-item">
+                <img src="../public/img/clock.svg" alt="">
+                <h2 class="text-dark">Time</h2>
+                <p class="text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="confidence-item">
+                <img src="../public/img/turn.svg" alt="">
+                <h2 class="text-dark">Flexibility</h2>
+                <P class="text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
+            </div>
+            <div class="confidence-item">
+                <img src="../public/img/documents-security.svg" alt="">
+                <h2 class="text-dark">Confidentiality</h2>
+                <p class="text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="principal-section item">
+            <div class="country">
+                <img src="../public/img/koutoubia-mosque.jpg" alt="">
+            </div>
+        </div>
+        <div class="secondary-section item">
+            <div class="country">
+                <img src="../public/img/brazil.jpg" alt="">
+            </div>
+            <div class="country">
+                <img src="../public/img/eiffel-tower-paris.jpg" alt="">
+            </div>
+            <div class="country">
+                <img src="../public/img/taj-mahal-agra-india.jpg" alt="">
+            </div>
+            <div class="country">
+                <img src="../public/img/istanbul-turkey.jpg" alt="">
+            </div>
+        </div>
+    </section> -->
+    <div class="containerF"></div>
+    <script src="../public/js/flights.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

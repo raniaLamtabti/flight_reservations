@@ -1,0 +1,85 @@
+$theme-colors: ( "primary": #067EED, "secondary": #FF7C1F, "light": #C1E6FF, "dark": #0E3854, "white": #FFF);
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+header {
+    .navbar-brand {
+        img {
+            height: 50px;
+        }
+    }
+}
+
+.hero {
+    height: 100vh;
+    background-image: url("../img/slide1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    .search-div {
+        height: max-content;
+        padding: 20px;
+        width: max-content;
+        border-radius: 20px;
+        margin: 0px 200px;
+        form {
+            align-items: flex-end;
+            flex-wrap: wrap;
+            justify-content: center;
+            .btn {
+                margin-bottom: 0px !important;
+                align-self: flex-end;
+            }
+        }
+    }
+}
+
+.confidence-section {
+    .confidence {
+        display: flex;
+        width: initial;
+        justify-content: flex-end;
+        gap: 50px;
+        padding: 30px;
+        margin: 30px 0;
+        border-radius: 20px 0 0 20px;
+        margin-left: 20%;
+        justify-content: center;
+        flex-wrap: wrap;
+        .confidence-item {
+            text-align: center;
+            img {
+                width: 100px;
+            }
+            p {
+                width: 80%;
+                margin: auto;
+            }
+        }
+    }
+}
+
+.gallery {
+    margin: 0 10%;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    .item {
+        overflow: hidden;
+        .country {
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+    .secondary-section {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        img {
+            max-width: 300px !important;
+        }
+    }
+}

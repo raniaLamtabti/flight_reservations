@@ -75,4 +75,32 @@
                 return false;
             }
         }
+
+        
+        public function find($data) {
+            
+            $this->db->query('SELECT * FROM flight WHERE fromCountry = :fromCountry AND  toCountry = :toCountry AND  dateTimeDepart = :dateTimeDepart' );
+    
+            //Bind values
+            $this->db->bind(':fromCountry', $data['fromCountry']);
+            $this->db->bind(':toCountry', $data['toCountry']);
+            $this->db->bind(':dateTimeDepart', $data['dateTimeDepart']);
+    
+            //Execute function
+            $flight = $this->db->resultSet();
+            return $flight;
+        }
+
+        public function findRout($data){
+        $this->db->query('SELECT * FROM flight WHERE fromCountry = :toCountry AND  toCountry = :fromCountry AND  dateTimeDepart = :dateTimeArrive' );
+    
+            //Bind values
+            $this->db->bind(':fromCountry', $data['fromCountry']);
+            $this->db->bind(':toCountry', $data['toCountry']);
+            $this->db->bind(':dateTimeArrive', $data['dateTimeArrive']);
+    
+            //Execute function
+            $flight = $this->db->resultSet();
+            return $flight;
+        }
     }

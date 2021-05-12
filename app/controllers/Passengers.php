@@ -11,7 +11,10 @@ class Passengers extends Controller {
         $data = [
             'passengers' => $passengers
         ];
-        $this->view('passengers/index', $data);
+        header('Access-Control-Allow-Origin: *');
+        header('Content-Type: application/json');
+
+        echo json_encode($data['passengers']);
     }
 
     public function create() {
@@ -25,7 +28,10 @@ class Passengers extends Controller {
         $data = [
             'passenger' => $passenger
         ];
-        $this->view('passengers/edit', $data);
+        header('Access-Control-Allow-Origin: *');
+        header('Content-Type: application/json');
+
+        echo json_encode($data['passenger']);
     }
 
     public function update() {

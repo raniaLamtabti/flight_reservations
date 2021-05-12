@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../public/sass/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">country from</th>
+                    <th scope="col">country to</th>
+                    <th scope="col">city from</th>
+                    <th scope="col">city to</th>
+                    <th scope="col">date depart</th>
+                    <th scope="col">date arrive</th>
+                    <th scope="col">depart</th>
+                    <th scope="col">land</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">
+                    </th>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    </td>
+                    <td class="d-flex">
+                        <form action="update" method="POST"><input type="hidden" name="id" value="<?php echo $flight['id'] ?>"><button href="update" class="btn btn-secondary">reserve</button></form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../public/js/searchResult.js"></script>
+</body>
+
+</html>

@@ -11,12 +11,29 @@ class Flights extends Controller {
         $data = [
             'flights' => $flights
         ];
-        $this->view('flights/index', $data);
+        header('Access-Control-Allow-Origin: *');
+        header('Content-Type: application/json');
+        
+        echo json_encode($data['flights']);
+    }
+    
+    public function find() {
+        $flights = $this->flightModel->find($this->data);
+        if(!empty($this->data['dateTimeDepart'])){
+            $flightsRout = $this->flightModel->findRout($this->data);
+        }
+        $data = [
+            'flights' => $flights,
+            'flightsRout' => $flightsRout
+        ];
+        header('Access-Control-Allow-Origin: *');
+        header('Content-Type: application/json');
+        
+        echo json_encode($data);
     }
 
     public function create() {
         $this->flightModel->store($this->data);
-        // $this->view('flights/login');
     }
 
     public function edit() {
@@ -25,7 +42,10 @@ class Flights extends Controller {
         $data = [
             'flight' => $flight
         ];
-        $this->view('flights/edit', $data);
+        header('Access-Control-Allow-Origin: *');
+        header('Content-Type: application/json');
+
+        echo json_encode($data['flight']);
     }
 
     public function update() {

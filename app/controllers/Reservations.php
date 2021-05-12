@@ -11,7 +11,10 @@ class Reservations extends Controller {
         $data = [
             'reservations' => $reservations
         ];
-        $this->view('reservations/index', $data);
+        header('Access-Control-Allow-Origin: *');
+        header('Content-Type: application/json');
+
+        echo json_encode($data['reservations']);
     }
 
     public function create() {
@@ -25,7 +28,10 @@ class Reservations extends Controller {
         $data = [
             'reservation' => $reservation
         ];
-        $this->view('reservations/edit', $data);
+        header('Access-Control-Allow-Origin: *');
+        header('Content-Type: application/json');
+
+        echo json_encode($data['reservation']);
     }
 
     public function update() {
